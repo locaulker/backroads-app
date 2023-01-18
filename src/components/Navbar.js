@@ -1,6 +1,6 @@
 import React from "react"
 import logo from "../images/logo.svg"
-import { pageLinks } from "../data"
+import { pageLinks, socialLinks } from "../data"
 
 const Navbar = () => {
   return (
@@ -27,36 +27,21 @@ const Navbar = () => {
         </ul>
 
         <ul className="nav-icons">
-          <li>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              className="nav-icon"
-            >
-              <i className="fab fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              className="nav-icon"
-            >
-              <i className="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              className="nav-icon"
-            >
-              <i className="fab fa-squarespace"></i>
-            </a>
-          </li>
+          {socialLinks.map(social => {
+            const { id, url, icon } = social
+            return (
+              <li key={id}>
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="nav-icon"
+                >
+                  <i className={icon}></i>
+                </a>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </nav>
