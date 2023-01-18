@@ -1,5 +1,6 @@
 import React from "react"
 import logo from "../images/logo.svg"
+import { pageLinks } from "../data"
 
 const Navbar = () => {
   return (
@@ -13,33 +14,16 @@ const Navbar = () => {
         </div>
         {/* left this comment on purpose  */}
         <ul className="nav-links" id="nav-links">
-          <li>
-            <a href="#home" className="nav-link">
-              {" "}
-              home{" "}
-            </a>
-          </li>
-
-          <li>
-            <a href="#about" className="nav-link">
-              {" "}
-              about{" "}
-            </a>
-          </li>
-
-          <li>
-            <a href="#services" className="nav-link">
-              {" "}
-              services{" "}
-            </a>
-          </li>
-
-          <li>
-            <a href="#tours" className="nav-link">
-              {" "}
-              tours
-            </a>
-          </li>
+          {pageLinks.map(link => {
+            const { id, href, text } = link
+            return (
+              <li key={id}>
+                <a href={href} className="nav-link">
+                  {text}
+                </a>
+              </li>
+            )
+          })}
         </ul>
 
         <ul className="nav-icons">
