@@ -37,7 +37,7 @@ const Tours = () => {
         <article className="tour-card">
           <div className="tour-img-container">
             <img src="./images/tour-2.jpeg" className="tour-img" alt="" />
-            <p className="tour-date">october 1th, 2020</p>
+            <p className="tour-date">october 1st, 2020</p>
           </div>
           <div className="tour-info">
             <h4>best of java</h4>
